@@ -1,7 +1,7 @@
 (() => {
     let steps = 8;
     let path = "UDDDUDUU";
-    console.log(countingValleys(steps, path));
+    console.log(countingValleysV3(steps, path));
 })()
 
 function countingValleys(steps, path) {
@@ -32,10 +32,46 @@ function countingValleys(steps, path) {
             }
         }
 
-        if (((altitudeArray[i] == 0)) && (passing)) {
+        if ((altitudeArray[i] == 0) && (passing)) {
             valleyNumber++
         }
     }
 
-    return(valleyNumber)
+    return (valleyNumber)
+}
+
+function countingValleysV2(steps, path) {
+    let valleyCount = 0;
+    let position = 0;
+    let position_obj = {
+        'U': 1,
+        'D': -1
+    }
+    for (let i = 0; i < steps; i++) {
+        position += position_obj[path[i]]
+
+        if (position == 0 && path[i] == 'U') {
+            valleyCount++
+        }
+    }
+    return valey_count
+}
+
+function countingValleysV3(steps, path) {
+    let valleyCount = 0;
+    let altitude = 0;
+    let positionObj = {
+        "U": 1,
+        "D": -1
+    }
+
+    for (let i = 0; i < steps; i++) {
+        altitude += positionObj[path[i]]
+
+        if (altitude === 0 && path[i] === "U") {
+            valleyCount++;
+        }
+    }
+
+    return valleyCount;
 }
