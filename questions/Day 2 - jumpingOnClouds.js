@@ -8,9 +8,8 @@ function jumpingOnClouds(c) {
     // Write your code here
     const arr = c;
     let totalNumber = 0;
-    const pathLength = c.length;
 
-    for (let i = 0; i < pathLength;) {
+    for (let i = 0; i < c.length;) {
         if (arr[i + 2] !== 1 && arr[i + 2] != null) {
             totalNumber++;
             i += 2;
